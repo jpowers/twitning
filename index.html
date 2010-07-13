@@ -7,160 +7,134 @@
     <link href="stylesheets/slides.css" rel="stylesheet">
     <link href="stylesheets/themes/basic.css" rel="stylesheet">
     <link href="stylesheets/custom.css" rel="stylesheet">
-    <title>Twitning Talks</title>
+    <title>A Steak Twitning Talk</title>
     <script>
       if (typeof jQuery == 'undefined') {
         alert('Could not load jQuery from Google.  Check your Internet connection or install jQuery directly into your javascripts directory.  Without jQuery, this slideshow will have layout and behavior errors.');
       }
     </script>
   </head>
+
   <body>
-    <div id="slideshow">
+    <div id="slideshow"> 
+      
+      <div id="timer" style="display: none;">10</div>
+
+      <!-- INTRO, untimed -->
       <section>
-        <h1>Twitning Talks</h1>
-        <h2>Insanely Short Presentations</h2>
         <button id="play">PLAY ▶</button>
+        <h1>github.com/cavalle/steak</h1>
+        <h3>&quot;Minimalist acceptance testing on top of RSpec&quot;</h3>
+        <img src="http://dl.dropbox.com/u/645329/steak_small.jpg"/>
+        <footer>* Not just for omnivores</footer>
       </section>
+
+
+      <!-- 1 : introduction -->
       <section>
-        <header><h1>Key Navigation</h1></header>
-        <table>
-          <tr>
-            <td class="key">ESC</td>
-            <td>pause the presentation</td>
-          </tr>
-          <tr>
-            <td class="key">&rarr; or SPACE</td>
-            <td>next slide</td>
-          </tr>
-          <tr>
-            <td class="key">&larr;</td>
-            <td>previous slide</td>
-          </tr>
-          <tr>
-            <td class="key">SHIFT + CMD + F</td>
-            <td>toggle full screen</td>
-          </tr>
-        </table>
-      </section>
-      <section class="section_intro">
-        <h1>Part I</h1>
-        <h2>About Twitning Talks</h2>
-      </section>
-      <section>
-        <header><h1>About Twitning Talks</h1></header>
+      <header><h1>Who?</h1></header>
         <ul>
-          <li>
-            Twitning is a portmanteau of Twitter and lightning.
-          </li>
-          <li>
-            Twitning talks are lightning talks that must not exceed 1:40.
-          </li>
-          <li>
-            They are inspired by Ignite presentations.
-          </li>
-        </ul>
-        <footer>
-          Disclaimer: Twitning talks are not affiliated with Twitter.
-        </footer>
-      </section>
-      <section>
-        <header><h1>About Twitning Talks</h1></header>
-        <ul>
-          <li>
-             A twitning talk consists of 10 slides.
-          </li>
-          <li>
-             Each slide autoadvances every 10 seconds.
-          </li>
+          <li>Name: Jay Powers</li>
+          <li>Work: Vermonster</li>
+          <li>github/IRC: jpowers/bennrock</li>
+          <li>Number of twitning talks to date: 0</li>
         </ul>
       </section>
+
+      <!-- 2 : What is steak from a very high level -->
+      <section>
+        <header><h1>What?</h1></header>
+        <ul>
+          <li></li>
+        </ul>
+      </section>
+
+      <!-- 3 : Why would you use steak -->
+      <section>
+        <header><h1>Why?</h1></header>
+        <ul>
+          <li>
+            Cucumber is an external DSL (for non-programmers)
+          </li>
+          <li>
+            Steak is an internal DSL (for ruby programmers)
+          </li>
+          <li>
+            Select tool based on consumer / audience
+          </li>
+          
+        </ul>
+      </section>
+
+      <!-- 4 : How -->
+      <section>
+        <header><h1>How? (installation)</h1></header>
+
+        <p>Install the gem</p>
+
+        <pre>
+          gem install steak
+        </pre>
+        
+        <p>Then (in your test helper):</p>
+
+        <pre>
+          require 'steak'
+        </pre>
+      </section>
+
+      <!-- 5 : How -->
+      <section>
+        <header><h1>How? (writing tests)</h1></header>
+        <p>It's Cucumber-rspec-esque:</p>
+        <pre>
+  feature "Main page" do
+
+    background do
+    end
+
+    scenario "should do something" do
+    end
+
+  end
+        </pre>
+      </section>
+
+      <!-- 6 : Talk about the rails app -->
       <section class="section_intro">
         <h1>Part II</h1>
-        <h2>Creating a Twitning Talk</h2>
+        <h2>Real Example in a Rails App</h2>
       </section>
+
+      <!-- 7 : Generator / setup -->
       <section>
-        <header><h1>Creating a Twitning Talk</h1></header>
-        <ul>
-          <li>
-            To create a twitning talk, fork this code on github.
-          </li>
-          <li>
-            Replace the contents of index.html with the contents of your slideshow.
-          </li>
-          <li>
-            This code comes with a default CSS theme, basic.css.
-          </li>
-          <li>
-            Add your own style tweaks to custom.css.  Or you can create
-            a completely new CSS theme.
-          </li>
-        </ul>
+        <header><h1>Rails Implementation</h1></header>
+        <pre>
+        </pre>
       </section>
+
+      <!-- 8 : Show an interesting example -->
       <section>
-        <header><h1>Creating a Twitning Talk</h1></header>
-        <ul>
-          <li>
-            This slideshow is only targeted at Chrome and Firefox.
-            It works reasonably well in Safari and Opera, but Safari does
-            not have fullscreen mode.
-          </li>
-          <li>
-            Your presentation should actually have twelve slides: a title slide,
-            ten presentation slides,
-            and an ending slide.  When the ending slide displays, your time
-            is up (you do not have 10 seconds for the ending slide).
-          </li>
-          <li>
-            Avoid putting content on the bottom third of the screen.  This
-            bullet point is too low and much of the audience won't be
-            able to read it.
-          </li>
-        </ul>
       </section>
+
+      <!-- 9 : Show the test output -->
       <section class="section_intro">
-        <h1>Part III</h1>
-        <h2>Sample Page Layouts</h2>
       </section>
-      <section>
-        <header><h1>Header</h1></header>
-        <p>
-          This demonstrates a page with a header and a paragraph of text.
-        </p>
-      </section>
+
+      <!-- 10 : Talk about some challenges -->
       <section>
         <header><h1>Code</h1></header>
         <p>
           This demonstrates a page containing code.
         </p>
-        <pre>
-def display_dependency_tree
-  displayable_tasks = tasks.select do |t|
-    t.comment && t.name =~ options.show_task_pattern
-  end
-  for task in displayable_tasks
-    $indent = 0
-    puts task.name
-    display_dependent_tasks(task)
-  end
-end
-        </pre>
       </section>
-      <section id="image_background">
-        <header><h1>Image</h1></header>
-        <img src="images/tigers.jpg" />
-      </section>
-      <section>
-        <header><h1>Image</h1></header>
-        <p>
-          Note that it's not straightforward to use an image as the background of
-          a slide, since the slide dimensions are the screen resolution and
-          you don't know them ahead of time.  It's possible to accomplish this, however,
-          with JavaScript.
-        </p>
-      </section>
+
+      <!-- last slide : thank you -->
       <section id="last_slide">
-        <h1>Process.exit!</h1>
+        <h1>Thanks!</h1>
       </section>
+
     </div>
+
   </body>
 </html>

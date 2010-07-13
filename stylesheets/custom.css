@@ -25,3 +25,17 @@ td.key {
   font-family: "Courier New";
   margin-top: 250px;
 }
+
+body {
+  background: #02060e url('http://vermonster.com/images/site/background-grass-night.png') repeat-x bottom;   
+}
+
+#slideshow {
+  background: #02060e url('http://vermonster.com/images/site/background-graident-night.png') repeat-x;
+}
+
+section {
+  background-color: #eee;
+}
+
+#timer { color: #222; font-family: futura; position: fixed; right: 125px; bottom: 0; font-size: 48px; }
