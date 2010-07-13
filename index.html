@@ -46,8 +46,8 @@
         <header><h1>What is Steak?</h1></header>
         <ul>
           <li>Acceptance testing framework</li>
-          <li>Ruby / Rspec / webrat</li>
-          <li>Inspired by Cucumber, Story Runner? Maybe</li>
+          <li>Ruby / Rspec / Webrat or Capybara</li>
+          <li>Inspired by Cucumber / Story Runner?</li>
         </ul>
       </section>
       
@@ -80,13 +80,14 @@
         <p>It's a gem, silly</p>
 
         <pre>
-          gem install steak
+gem install steak
         </pre>
-        
         <p>Then (in your test helper):</p>
-
         <pre>
-          require 'steak'
+require 'steak'
+        </pre>
+        <pre>
+feature, scenario, background
         </pre>
       </section>
 
@@ -98,47 +99,49 @@
       <!-- 7 : How -->
       <section>
         <header><h1>What does Steak look like?</h1></header>
-        <p>It's Cucumber-rspec-esque:</p>
-        <pre>
-  feature "Login" do
-    background do
-      create_user :login => "jpowers"
-      login_as "jpowers"
-    end
-    scenario "should see my login" do
-      visit '/'
-      page.should have_css(".login", :text => "jpowers")
-    end
+        <pre>          
+feature "Login", %q {
+  In order to login
+  As a user
+  I want to login
+} do
+
+  background do
+    create_user :login => "jpowers"
   end
+  
+  scenario "login" do
+    visit '/login'
+    fill_in 'username', :with => 'jpowers'
+    fill_in 'password', :with => '4dj49dk'
+    click 'Login'
+    page.should have_content("Login successful!")
+  end
+end
         </pre>
       </section>
 
       <!-- 8 : Generator / setup -->
       <section>
         <header><h1>Rails Integration</h1></header>
-        <p>Easy</p>
         <pre>
-          script/generate steak (--webrat)
+script/generate steak (--webrat)
         </pre>
         <pre>
-          script/generate acceptance_spec cool_new_feature
+script/generate acceptance_spec cool_new_feature
         </pre>
         <pre>
-          rake spec:acceptance
+rake spec:acceptance
         </pre>
       </section>
 
       <!-- 9 : VS Cucumber -->
       <section>
-        <header><h1>What about the Cucumber fad?</h1></header>
+        <header><h1>Wait, what about Cucumber?</h1></header>
         <ul>
         <li>Not really a replacement.</li>
-        <li>
-          Select the right tool for the job.
-        </li>
-        <li>
-          How often do non-developers use this stuff?
-        </li>
+        <li>Select the right tool for the job.</li>
+        <li>How often do non-developers use this stuff?</li>
         </ul>
       </section>
 
