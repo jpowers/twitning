@@ -23,50 +23,61 @@
       <!-- INTRO, untimed -->
       <section>
         <button id="play">PLAY ▶</button>
-        <h1>github.com/cavalle/steak</h1>
+        <h2>Steak</h1>
         <h3>&quot;Minimalist acceptance testing on top of RSpec&quot;</h3>
-        <img src="http://dl.dropbox.com/u/645329/steak_small.jpg"/>
+        <img src="images/steak.jpg"/>
         <footer>* Not just for omnivores</footer>
       </section>
 
 
       <!-- 1 : introduction -->
       <section>
-      <header><h1>Who?</h1></header>
+      <header><h1>Me</h1></header>
         <ul>
           <li>Name: Jay Powers</li>
           <li>Work: Vermonster</li>
           <li>github/IRC: jpowers/bennrock</li>
-          <li>Number of twitning talks to date: 0</li>
+          <li>Favorite: Bone in Ribeye / Medium</li>
         </ul>
       </section>
 
       <!-- 2 : What is steak from a very high level -->
       <section>
-        <header><h1>What?</h1></header>
+        <header><h1>What is Steak?</h1></header>
         <ul>
-          <li></li>
+          <li>Integration / Acceptance testing framework</li>
+          <li>Ruby / Rspec</li>
+          <li>No Given, Whens, Thens, blahhh</li>
+          <li>Inspired by Cucumber, Story Runner? I don't know</li>
         </ul>
       </section>
-
+      
       <!-- 3 : Why would you use steak -->
       <section>
-        <header><h1>Why?</h1></header>
+        <header><h1>Why would I use it?</h1></header>
         <ul>
-          <li>
-            Cucumber is an external DSL (for non-programmers)
-          </li>
           <li>
             Steak is an internal DSL (for ruby programmers)
           </li>
+          <li>Fast and easy to write</li>
+          <li>Fast execution</li>
+          <li>Sometimes Cucumber is hard</li>
+        </ul>
+      </section>
+      
+      <!-- 4 : Where do I find good steak -->
+      <section>
+        <header><h1>Where do I find good steak?</h1></header>
+        <ul>
           <li>
-            Select tool based on consumer / audience
+            Capital Gill, Grill 23, Mortons???
           </li>
-          
+          <li>It's much cheaper on github</li>
+          <li>http://github.com/cavalle/steak</li>
         </ul>
       </section>
 
-      <!-- 4 : How -->
+      <!-- 5 : How -->
       <section>
         <header><h1>How? (installation)</h1></header>
 
@@ -83,58 +94,71 @@
         </pre>
       </section>
 
-      <!-- 5 : How -->
+      <!-- 6 : Talk about the rails app -->
+      <section>
+        <img src="images/intermission.jpg"/>
+      </section>
+
+      <!-- 7 : How -->
       <section>
         <header><h1>How? (writing tests)</h1></header>
         <p>It's Cucumber-rspec-esque:</p>
         <pre>
-  feature "Main page" do
-
+  feature "Login" do
     background do
+      create_user :login => "jpowers"
+      login_as "jpowers"
     end
-
-    scenario "should do something" do
+    scenario "should see my login" do
+      visit '/'
+      page.should have_css(".login", :text => "jpowers")
     end
-
   end
         </pre>
       </section>
 
-      <!-- 6 : Talk about the rails app -->
-      <section class="section_intro">
-        <h1>Part II</h1>
-        <h2>Real Example in a Rails App</h2>
-      </section>
-
-      <!-- 7 : Generator / setup -->
+      <!-- 8 : Generator / setup -->
       <section>
-        <header><h1>Rails Implementation</h1></header>
+        <header><h1>Rails Integration</h1></header>
+        <p>Easy</p>
         <pre>
+          script/generate steak (--webrat)
+        </pre>
+        <pre>
+          script/generate acceptance_spec cool_new_feature
+        </pre>
+        <pre>
+          rake spec:acceptance
         </pre>
       </section>
 
-      <!-- 8 : Show an interesting example -->
+      <!-- 9 : VS Cucumber -->
       <section>
-      </section>
-
-      <!-- 9 : Show the test output -->
-      <section class="section_intro">
+        <header><h1>What about the Cucumber fad?</h1></header>
+        <ul>
+        <li>Not really a replacement.</li>
+        <li>
+          Select the right tool for the job.
+        </li>
+        <li>
+          How often do non-developers use this stuff?
+        </li>
+        </ul>
       </section>
 
       <!-- 10 : Talk about some challenges -->
       <section>
-        <header><h1>Code</h1></header>
-        <p>
-          This demonstrates a page containing code.
-        </p>
+        <header><h1>Idea</h1></header>
+        <ul>
+        <li>Steak Cucumber salad.</li>
+        <li>Could Steak replace Cucumber steps?</li>
+        </ul>
       </section>
 
       <!-- last slide : thank you -->
       <section id="last_slide">
         <h1>Thanks!</h1>
       </section>
-
     </div>
-
   </body>
 </html>
